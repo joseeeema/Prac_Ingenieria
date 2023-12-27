@@ -49,6 +49,8 @@ public class Jugador2 : MonoBehaviour, IMovible
             transform.position = _destino;
             _enMovimiento = false;
         }
+
+        _rigidbody.velocity = Vector3.zero;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -63,6 +65,15 @@ public class Jugador2 : MonoBehaviour, IMovible
         _enMovimiento = false;
         _camaraMovible._enMovimiento = false;
         _camaraMovible.transform.position = (transform.position - _offset);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Llave")
+        {
+            other.gameObject.SetActive(false);
+            GestorLaberinto.instancia.LlaveRecogida();
+        }
     }
 }
 

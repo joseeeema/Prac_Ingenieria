@@ -6,12 +6,7 @@ TagManager:
   tags:
   - Jugador
   - Globo
-  - Enemigo 1
-  - Enemigo 2
-  - Enemigo 3
-  - Globo 2
-  - Globo 3
-  - Globo 4
+  - Llave
   layers:
   - Default
   - TransparentFX

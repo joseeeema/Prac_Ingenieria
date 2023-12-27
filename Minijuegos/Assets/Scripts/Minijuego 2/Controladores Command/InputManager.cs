@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
     {
         // Esta clase se encarga de recoger las entradas del usuario, para mandar ejecutar las acciones a CommandManager
 
-        if(_jugador.enMovimiento()&&Input.anyKey)
+        if((_jugador.enMovimiento()&&Input.anyKey)||(GestorLaberinto.instancia.juegoBloqueado))
         {
             return;
         }
