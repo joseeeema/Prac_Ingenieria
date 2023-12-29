@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GestorLaberinto : MonoBehaviour
@@ -18,8 +19,19 @@ public class GestorLaberinto : MonoBehaviour
     private GameObject _objetivo;
 
     // Llave recogida
+    [SerializeField]
     private GameObject _llave;
     public bool _llaveRecogida = false;
+
+    // Pantalla de final
+    [SerializeField]
+    private GameObject _pantallaFin;
+    [SerializeField]
+    private Temporizador tiempo;
+    [SerializeField]
+    private TMP_Text _resultado;
+    [SerializeField]
+    private TMP_Text _comentario;
 
     private void Awake()
     {
@@ -37,12 +49,6 @@ public class GestorLaberinto : MonoBehaviour
     void Start()
     {
         StartCoroutine(CuentaAtras());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator CuentaAtras()
@@ -65,6 +71,53 @@ public class GestorLaberinto : MonoBehaviour
     {
         _llave.SetActive(true);
         _llaveRecogida = true;
+    }
+
+    public void FinJuego()
+    {
+        _pantallaFin.SetActive(true);
+        _llave.SetActive(false);
+        tiempo.Desaparecer();
+        juegoBloqueado = true;
+        if (tiempo.segundosTranscurridos < 10)
+        {
+            if (tiempo.minutosTranscurridos < 10)
+            {
+                _resultado.text = "0" + tiempo.minutosTranscurridos.ToString() + ":0" + tiempo.segundosTranscurridos.ToString();
+            }
+            else
+            {
+                _resultado.text = tiempo.minutosTranscurridos.ToString() + ":0" + tiempo.segundosTranscurridos.ToString();
+            }
+        }
+        else
+        {
+            if (tiempo.minutosTranscurridos < 10)
+            {
+                _resultado.text = "0" + tiempo.minutosTranscurridos.ToString() + ":" + tiempo.segundosTranscurridos.ToString();
+            }
+            else
+            {
+                _resultado.text = tiempo.minutosTranscurridos.ToString() + ":" + tiempo.segundosTranscurridos.ToString();
+            }
+        }
+
+        if(tiempo.minutosTranscurridos == 0)
+        {
+            _comentario.text = "¡Enhorabuena! Has conseguido escapar casi volando, te orientas perfectamente en la oscuridad...";
+        }
+        else if (tiempo.minutosTranscurridos == 1 && tiempo.segundosTranscurridos < 45)
+        {
+            _comentario.text = "¡Felicidades! Parece que se te da bien esto de los laberintos.";
+        }
+        else if ((tiempo.minutosTranscurridos == 1 && tiempo.segundosTranscurridos >= 45)||(tiempo.minutosTranscurridos == 2 && tiempo.segundosTranscurridos < 30))
+        {
+            _comentario.text = "¡Por fin fuera! Te ha costado un poco encontrar la salida...";
+        }
+        else
+        {
+            _comentario.text = "¡Vaya! Parecía que no ibas a salir nunca de aquí...";
+        }
     }
     
 

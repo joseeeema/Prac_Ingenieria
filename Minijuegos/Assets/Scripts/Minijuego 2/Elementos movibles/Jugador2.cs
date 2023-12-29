@@ -23,6 +23,11 @@ public class Jugador2 : MonoBehaviour, IMovible
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void Start()
+    {
+        _camaraMovible.transform.position = (transform.position - _offset);
+    }
+
     public bool enMovimiento()
     {
         return _enMovimiento;
@@ -71,8 +76,16 @@ public class Jugador2 : MonoBehaviour, IMovible
     {
         if(other.gameObject.tag == "Llave")
         {
+            // Añadir efecto de sonido al recoger la llave
             other.gameObject.SetActive(false);
             GestorLaberinto.instancia.LlaveRecogida();
+        }
+
+        if(other.gameObject.tag == "Puerta" && GestorLaberinto.instancia._llaveRecogida)
+        {
+            // Añadir efecto de sonido al abrir la puerta
+            other.gameObject.SetActive(false);
+            GestorLaberinto.instancia.FinJuego();
         }
     }
 }

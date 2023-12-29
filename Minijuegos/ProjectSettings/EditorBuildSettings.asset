@@ -4,5 +4,30 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu inicio.unity
+    guid: c17d98e78a5d99441a5de997e44c40df
+  - enabled: 1
+    path: "Assets/Scenes/Men\xFA selecci\xF3n modo.unity"
+    guid: aeb06a861515a954dba69cf59a0e5fd0
+  - enabled: 1
+    path: "Assets/Scenes/Men\xFA personajes.unity"
+    guid: 6d813282aa9c00f4e9da4779d9fca5bc
+  - enabled: 1
+    path: "Assets/Scenes/Men\xFA juego libre.unity"
+    guid: f3e0670b12f0d99429ff6ac755b43b6b
+  - enabled: 1
+    path: Assets/Scenes/J1 - Infla el globo.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/J2 - Escapa del laberinto.unity
+    guid: 39d29742e2f603a46be73e818b00f268
+  - enabled: 1
+    path: "Assets/Scenes/J3 - Esquiva los obst\xE1culos.unity"
+    guid: f385f2ab16f73854dbee8096b5ba461c
+  - enabled: 1
+    path: Assets/Scenes/TransicionTriatlon.unity
+    guid: 63b02919be552f9428412447b1823f49
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

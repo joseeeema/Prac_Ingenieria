@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,8 +9,8 @@ public class Temporizador : MonoBehaviour
     [SerializeField]
     private TMP_Text cronometro;
     private int segundoInicial;
-    private int segundosTranscurridos = 0;
-    private int minutosTranscurridos = 0;
+    public int segundosTranscurridos = 0;
+    public int minutosTranscurridos = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -60,4 +61,10 @@ public class Temporizador : MonoBehaviour
             
         }
     }
+
+    public void Desaparecer()
+    {
+        cronometro.text = "";
+    }
+
 }
