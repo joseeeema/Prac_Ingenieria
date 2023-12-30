@@ -15,6 +15,8 @@ public class Jugador2 : MonoBehaviour, IMovible
 
     private Rigidbody _rigidbody;
 
+    private const float PI = 3.14159f;
+
     private void Awake()
     {
         _camara = GameObject.FindWithTag("MainCamera");
@@ -35,11 +37,33 @@ public class Jugador2 : MonoBehaviour, IMovible
 
     public void Mover(Vector3 direccion)
     {
+
         if (!_enMovimiento)
         {
-            _direccionDestino = new Vector3(direccion.x * transform.right.x, 0, direccion.z * transform.forward.z).normalized;
+            _direccionDestino = new Vector3(direccion.x * 1, 0, direccion.z * 1).normalized;
             _destino = transform.position + _direccionDestino * 1.05f;
             _enMovimiento = true;
+            Girar(direccion);
+        }
+    }
+
+    private void Girar(Vector3 direccion)
+    {
+        if(direccion==Vector3.left)
+        {
+            transform.rotation = Quaternion.EulerRotation(0f, -PI/2, 0f);
+        }
+        if(direccion==Vector3.right)
+        {
+            transform.rotation = Quaternion.EulerRotation(0f, PI / 2, 0f);
+        }
+        if(direccion== Vector3.forward)
+        {
+            transform.rotation = Quaternion.EulerRotation(0f, 0f, 0f);
+        }
+        if (direccion == Vector3.back)
+        {
+            transform.rotation = Quaternion.EulerRotation(0f, PI, 0f);
         }
     }
 

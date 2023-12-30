@@ -378,6 +378,7 @@
 "Assets/Scripts/Minijuego 2/Interfaces/IMovible.cs"
 "Assets/Scripts/Minijuego 2/SemillaLaberinto.cs"
 "Assets/Scripts/Minijuego 2/Temporizador.cs"
+"Assets/Scripts/Minijuego 3/CintaTransportadora.cs"
 "Assets/Scripts/Navegación entre menús/BotonesInicio.cs"
 "Assets/Scripts/Navegación entre menús/BotonesJuego1.cs"
 "Assets/Scripts/Navegación entre menús/BotonesJuego2.cs"
