@@ -8,6 +8,8 @@ TagManager:
   - Globo
   - Llave
   - Puerta
+  - "Obst\xE1culo"
+  - Peluche
   layers:
   - Default
   - TransparentFX

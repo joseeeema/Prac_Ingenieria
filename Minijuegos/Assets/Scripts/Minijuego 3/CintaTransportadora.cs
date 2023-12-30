@@ -10,10 +10,13 @@ public class CintaTransportadora : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + (2.5f * Time.deltaTime));
-        if(transform.position.z>=limite)
+        if(!GestorJuguetes.instancia.juegoBloqueado)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, inicio);
+            transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + (4f * Time.deltaTime));
+            if(transform.position.z>=limite)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, inicio);
+            }
         }
     }
 }
