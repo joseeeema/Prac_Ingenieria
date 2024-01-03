@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,8 @@ public class GestorOpciones : MonoBehaviour
     [SerializeField] private Slider sliderBrillo;
     [SerializeField] private Slider sliderMusica;
     [SerializeField] private Slider sliderSonido;
+
+    public TMP_Text autoGuardado;
 
     private void Start()
     {
@@ -48,5 +51,19 @@ public class GestorOpciones : MonoBehaviour
     {
         botones.SetActive(true);     
         panel.SetActive(false);
+    }
+
+    public void ModificarDirtyFlag()
+    {
+        ControladorJuego.instancia._dirtyFlag = !ControladorJuego.instancia._dirtyFlag;
+        if(ControladorJuego.instancia._dirtyFlag)
+        {
+            autoGuardado.text = "Desactivar";
+            ControladorJuego.instancia.GuardarDatos();
+        }
+        else
+        {
+            autoGuardado.text = "Activar";
+        }
     }
 }

@@ -391,6 +391,8 @@
 "Assets/Scripts/Navegación entre menús/BotonesPersonajes.cs"
 "Assets/Scripts/Navegación entre menús/BotonesSelección.cs"
 "Assets/Scripts/Navegación entre menús/ControladorJuego.cs"
+"Assets/Scripts/Navegación entre menús/Música/GestorMúsica.cs"
+"Assets/Scripts/Navegación entre menús/Música/ReproductorSonido.cs"
 "Assets/Scripts/Navegación entre menús/Opciones/Brillo.cs"
 "Assets/Scripts/Navegación entre menús/Opciones/GestorOpciones.cs"
 "Assets/Scripts/Navegación entre menús/Opciones/OpcionesEscenas.cs"

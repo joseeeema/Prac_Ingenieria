@@ -56,8 +56,9 @@ public class Jugador3 : MonoBehaviour
         }
         if(collision.gameObject.tag == "Peluche")
         {
-            // Desbloquear el personaje 4
-            ControladorJuego.instancia._personajeD = true;
+            // Desbloquear el personaje 3
+            ControladorJuego.instancia.datosGuardado._desbloqueado3 = true;
+            ControladorJuego.instancia.GuardarDatos();
             Destroy(collision.gameObject);
         }
     }

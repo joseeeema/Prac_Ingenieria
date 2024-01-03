@@ -12,19 +12,16 @@ public class BotonesPersonajes : MonoBehaviour
 
     public void SeleccionPersonajeA()
     {
-        if(ControladorJuego.instancia._personajeA)
-        {
-            _selectedA.SetActive(true);
-            _selectedB.SetActive(false);
-            _selectedC.SetActive(false);
-            _selectedD.SetActive(false);
-            ControladorJuego.instancia._personaje = 0;
-        }
+         _selectedA.SetActive(true);
+         _selectedB.SetActive(false);
+         _selectedC.SetActive(false);
+         _selectedD.SetActive(false);
+         ControladorJuego.instancia._personaje = 0;        
     }
 
     public void SeleccionPersonajeB()
     {
-        if (ControladorJuego.instancia._personajeB)
+        if (ControladorJuego.instancia.datosGuardado._desbloqueado2)
         {
             _selectedB.SetActive(true);
             _selectedA.SetActive(false);
@@ -36,7 +33,7 @@ public class BotonesPersonajes : MonoBehaviour
 
     public void SeleccionPersonajeC()
     {
-        if (ControladorJuego.instancia._personajeC)
+        if (ControladorJuego.instancia.datosGuardado._desbloqueado3)
         {
             _selectedC.SetActive(true);
             _selectedB.SetActive(false);
@@ -48,7 +45,7 @@ public class BotonesPersonajes : MonoBehaviour
 
     public void SeleccionPersonajeD()
     {
-        if (ControladorJuego.instancia._personajeD)
+        if (ControladorJuego.instancia.datosGuardado._desbloqueado4)
         {
             _selectedD.SetActive(true);
             _selectedB.SetActive(false);

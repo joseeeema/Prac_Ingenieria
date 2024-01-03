@@ -28,19 +28,15 @@ public class PersonajesDesbloqueados : MonoBehaviour
 
     private void BloquearSilueta()
     {
-        if(!ControladorJuego.instancia._personajeA)
-        {
-            _imgA.color = Color.black;
-        }
-        if(!ControladorJuego.instancia._personajeB)
+        if(!ControladorJuego.instancia.datosGuardado._desbloqueado2)
         {
             _imgB.color = Color.black;
         }
-        if (!ControladorJuego.instancia._personajeC)
+        if (!ControladorJuego.instancia.datosGuardado._desbloqueado3)
         {
             _imgC.color = Color.black;
         }
-        if (!ControladorJuego.instancia._personajeD)
+        if (!ControladorJuego.instancia.datosGuardado._desbloqueado4)
         {
             _imgD.color = Color.black;
         }

@@ -9,6 +9,13 @@ public class BotonesJuego3 : MonoBehaviour
     {
         if (ControladorJuego.instancia._triatlon)
         {
+            // Si se completa el triatlon 3 veces, se desbloquea el personaje 2
+            ControladorJuego.instancia.datosGuardado._vecesTriatlon++;
+            if(ControladorJuego.instancia.datosGuardado._vecesTriatlon>=3)
+            {
+                ControladorJuego.instancia.datosGuardado._desbloqueado4 = true;
+            }
+            ControladorJuego.instancia.GuardarDatos();
             SceneManager.LoadScene(8);
         }
         else

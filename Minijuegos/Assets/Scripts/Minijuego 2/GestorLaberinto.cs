@@ -79,6 +79,13 @@ public class GestorLaberinto : MonoBehaviour
         _llave.SetActive(false);
         tiempo.Desaparecer();
         juegoBloqueado = true;
+
+        if (ControladorJuego.instancia._triatlon)
+        {
+            ControladorJuego.instancia.minutosJ2 = tiempo.minutosTranscurridos;
+            ControladorJuego.instancia.segundosJ2 = tiempo.segundosTranscurridos;
+        }
+
         if (tiempo.segundosTranscurridos < 10)
         {
             if (tiempo.minutosTranscurridos < 10)

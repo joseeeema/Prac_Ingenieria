@@ -89,7 +89,7 @@ public class GestorJuguetes : MonoBehaviour
                 _ejeX = 10;
                 break;
         }
-        obstaculo = Random.Range(0, 62);
+        obstaculo = Random.Range(0, 61);
         if(obstaculo < 15 && !GestorJuguetes.instancia.juegoBloqueado)
         {
             Instantiate(obstaculo_caballo, new Vector3(_ejeX, 2.5f, -45f), Quaternion.EulerRotation(-3.1419f / 2f, 0f, 0f));
@@ -139,6 +139,13 @@ public class GestorJuguetes : MonoBehaviour
         _pantallaFin.SetActive(true);
         tiempo.Desaparecer();
         juegoBloqueado = true;
+
+        if (ControladorJuego.instancia._triatlon)
+        {
+            ControladorJuego.instancia.minutosJ3 = tiempo.minutosTranscurridos;
+            ControladorJuego.instancia.segundosJ3 = tiempo.segundosTranscurridos;
+        }
+
         if (tiempo.segundosTranscurridos < 10)
         {
             if (tiempo.minutosTranscurridos < 10)

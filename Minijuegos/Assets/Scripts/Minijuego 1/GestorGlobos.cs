@@ -70,6 +70,11 @@ public class GestorGlobos : MonoBehaviour
         int porcentajeRedondeado = Mathf.RoundToInt(porcentaje);
         _porcentajeExito.text = porcentajeRedondeado.ToString()+"%";
 
+        if(ControladorJuego.instancia._triatlon)
+        {
+            ControladorJuego.instancia.porcentajeJ1 = porcentajeRedondeado;
+        }
+
         if(porcentaje < 65)
         {
             _comentario.text = "Aunque no hayas explotado el globo, tampoco has hecho un gran trabajo... ¡Trata de esforzarte más la próxima vez!";
@@ -85,6 +90,11 @@ public class GestorGlobos : MonoBehaviour
         if(porcentaje >= 95)
         {
             _comentario.text = "¡Impecable, eres un as! Casi la lías, pero has sabido cuando parar, ¡qué control tan ideal!";
+            if(porcentaje == 100)
+            {
+                ControladorJuego.instancia.datosGuardado._desbloqueado2 = true;
+                ControladorJuego.instancia.GuardarDatos();
+            }
         }
     }
 
