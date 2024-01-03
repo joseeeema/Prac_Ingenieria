@@ -8,10 +8,12 @@ public class Jugador : MonoBehaviour
     // El jugador es el sujeto del evento que infla el globo
     public EventHandler<int> InflarGlobo;
 
+    public GameObject[] skins;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        skins[ControladorJuego.instancia._personaje].SetActive(true);
     }
 
     // Update is called once per frame

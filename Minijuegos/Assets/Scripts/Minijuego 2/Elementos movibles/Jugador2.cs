@@ -17,6 +17,8 @@ public class Jugador2 : MonoBehaviour, IMovible
 
     private const float PI = 3.14159f;
 
+    public GameObject[] skins;
+
     private void Awake()
     {
         _camara = GameObject.FindWithTag("MainCamera");
@@ -28,6 +30,7 @@ public class Jugador2 : MonoBehaviour, IMovible
     private void Start()
     {
         _camaraMovible.transform.position = (transform.position - _offset);
+        skins[ControladorJuego.instancia._personaje].SetActive(true);
     }
 
     public bool enMovimiento()

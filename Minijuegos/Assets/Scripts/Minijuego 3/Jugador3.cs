@@ -5,12 +5,13 @@ using UnityEngine;
 public class Jugador3 : MonoBehaviour
 {
     private int _numVidas = 3;
+    public GameObject[] skins;
     [SerializeField] private GameObject[] _vidas;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        skins[ControladorJuego.instancia._personaje].SetActive(true);
     }
 
     // Update is called once per frame
