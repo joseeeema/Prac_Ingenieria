@@ -89,7 +89,7 @@ public class GestorJuguetes : MonoBehaviour
                 _ejeX = 10;
                 break;
         }
-        obstaculo = Random.Range(0, 61);
+        obstaculo = Random.Range(0, 62);
         if(obstaculo < 15 && !GestorJuguetes.instancia.juegoBloqueado)
         {
             Instantiate(obstaculo_caballo, new Vector3(_ejeX, 2.5f, -45f), Quaternion.EulerRotation(-3.1419f / 2f, 0f, 0f));
@@ -106,7 +106,7 @@ public class GestorJuguetes : MonoBehaviour
         {
             Instantiate(obstaculo_coche, new Vector3(_ejeX, 0f, -45f), Quaternion.identity);
         }
-        else if(obstaculo == 60 && !GestorJuguetes.instancia.juegoBloqueado)
+        else if(obstaculo >= 60 && !GestorJuguetes.instancia.juegoBloqueado)
         {
             Instantiate(oso_peluche, new Vector3(_ejeX, 0f, -45f), Quaternion.identity);
             Debug.Log("Oso de peluche");

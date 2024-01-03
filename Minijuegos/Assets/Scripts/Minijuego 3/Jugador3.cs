@@ -57,6 +57,7 @@ public class Jugador3 : MonoBehaviour
         {
             // Desbloquear el personaje 4
             ControladorJuego.instancia._personajeD = true;
+            Destroy(collision.gameObject);
         }
     }
 

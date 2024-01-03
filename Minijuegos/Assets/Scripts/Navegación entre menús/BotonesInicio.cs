@@ -24,11 +24,6 @@ public class BotonesInicio : MonoBehaviour
         _panelCreditos.SetActive(true);
     }
 
-    public void MostrarOpciones()
-    {
-        
-    }
-
     public void OcultarCreditos()
     {
         _botones.SetActive(true);

@@ -10,6 +10,9 @@ TagManager:
   - Puerta
   - "Obst\xE1culo"
   - Peluche
+  - Brillo
+  - Botones
+  - Panel
   layers:
   - Default
   - TransparentFX
