@@ -1,12 +1,12 @@
 {
     "_recordPuntosJ1": 97,
-    "_recordMinutosJ2": 1,
-    "_recordSegundosJ2": 25,
+    "_recordMinutosJ2": 0,
+    "_recordSegundosJ2": 52,
     "_recordMinutosJ3": 2,
-    "_recordSegundosJ3": 7,
+    "_recordSegundosJ3": 0,
     "_desbloqueado2": false,
-    "_desbloqueado3": false,
-    "_desbloqueado4": false,
-    "_vecesTriatlon": 2,
-    "_recordTriatlon": 1379.0
+    "_desbloqueado3": true,
+    "_desbloqueado4": true,
+    "_vecesTriatlon": 3,
+    "_recordTriatlon": 2360.0
 }

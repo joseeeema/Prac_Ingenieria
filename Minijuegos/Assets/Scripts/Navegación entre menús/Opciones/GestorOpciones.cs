@@ -29,11 +29,13 @@ public class GestorOpciones : MonoBehaviour
     public void CambiarVolumenMusica(float volumenMusica)
     {
         mezclador.SetFloat("volumenMusica", volumenMusica);
+        OpcionesEscenas.instance._volumenMusica = volumenMusica;
     }
 
     public void CambiarVolumenSonido(float volumenSonido)
     {
         mezclador.SetFloat("volumenSonido", volumenSonido);
+        OpcionesEscenas.instance._volumenSonido = volumenSonido;
     }
 
     public void CambiarBrillo(float intensidad)

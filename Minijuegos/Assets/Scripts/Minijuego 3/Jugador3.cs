@@ -35,7 +35,7 @@ public class Jugador3 : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (transform.position.x <= 0)
+            if (transform.position.x <= 1)
             {
                 transform.position = new Vector3(transform.position.x + 10, 4.5f, transform.position.z);
             }
