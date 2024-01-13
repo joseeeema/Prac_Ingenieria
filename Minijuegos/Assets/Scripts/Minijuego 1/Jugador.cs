@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jugador : MonoBehaviour
+public class Jugador : MonoBehaviour, ISubject
 {
     // El jugador es el sujeto del evento que infla el globo
-    public EventHandler<int> InflarGlobo;
+    private List<IObserver> observadores = new List<IObserver>();
 
     public GameObject[] skins;
 
@@ -28,7 +28,25 @@ public class Jugador : MonoBehaviour
     private void Controles()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            InflarGlobo?.Invoke(this, 0);
+            NotifyObservers();
+        }
+    }
+
+    public void AddObserver(IObserver o)
+    {
+        observadores.Add(o);
+    }
+
+    public void RemoveObserver(IObserver o)
+    {
+        observadores.Remove(o);
+    }
+
+    public void NotifyObservers()
+    {
+        foreach(IObserver observer in observadores)
+        {
+            observer.UpdateState(0);
         }
     }
 }

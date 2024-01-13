@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Interfaz : MonoBehaviour
+public class Interfaz : MonoBehaviour, IObserver
 {
     public TMP_Text puntuacion;
     private int puntuacion_;
@@ -21,10 +21,10 @@ public class Interfaz : MonoBehaviour
     void Start()
     {
         GameObject globo = GameObject.FindGameObjectWithTag("Globo");
-        globo.GetComponent<Globo>().ExplotarGlobo += ExplotarGlobo;
+        globo.GetComponent<ISubject>().AddObserver(gameObject.GetComponent<IObserver>());
 
         GameObject jugador = GameObject.FindGameObjectWithTag("Jugador");
-        jugador.GetComponent<Jugador>().InflarGlobo += InflarGlobo;
+        jugador.GetComponent<ISubject>().AddObserver(gameObject.GetComponent<IObserver>());
 
         segundosInicio = System.DateTime.Now.Second + 4;
     }
@@ -38,12 +38,12 @@ public class Interfaz : MonoBehaviour
         }
     }
 
-    private void ExplotarGlobo(object sender, int id)
+    private void ExplotarGlobo()
     {
         puntuacion.text = "Puntuación: 0";
     }
 
-    private void InflarGlobo(object sender, int id)
+    private void InflarGlobo()
     {
         puntuacion_++;
         puntuacion.text = "Puntuación: " + puntuacion_.ToString();
@@ -62,6 +62,18 @@ public class Interfaz : MonoBehaviour
         {
             juegoFinalizado = true;
             GestorGlobos.instancia.Victoria(puntuacion_);
+        }
+    }
+
+    public void UpdateState(int id)
+    {
+        if(id==0)
+        {
+            InflarGlobo();
+        }
+        else
+        {
+            ExplotarGlobo();
         }
     }
 }

@@ -364,6 +364,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2023.1.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Minijuego 1/GestorGlobos.cs"
 "Assets/Scripts/Minijuego 1/Globo.cs"
+"Assets/Scripts/Minijuego 1/Interfaces/IObserver.cs"
+"Assets/Scripts/Minijuego 1/Interfaces/ISubject.cs"
 "Assets/Scripts/Minijuego 1/Interfaz.cs"
 "Assets/Scripts/Minijuego 1/Jugador.cs"
 "Assets/Scripts/Minijuego 2/Acciones/MovimientoAtrás.cs"

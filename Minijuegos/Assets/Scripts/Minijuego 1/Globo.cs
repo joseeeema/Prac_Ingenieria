@@ -3,17 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Globo : MonoBehaviour
+public class Globo : MonoBehaviour, IObserver, ISubject
 {
     public int numVecesInflado = 0;
-    // Evento para explotar el globo y que se actualice la interfaz
-    public EventHandler<int> ExplotarGlobo;
+    private List<IObserver> observadores = new List<IObserver>();
 
     private void Start()
     {
-        // Se suscribe el método del observador (globo), al evento declarado en el sujeto (jugador)
+        observadores= new List<IObserver>();
+        // Se añade como observador del sujeto jugador
         GameObject jugador = GameObject.FindGameObjectWithTag("Jugador");
-        jugador.GetComponent<Jugador>().InflarGlobo += InflarGlobo;
+        jugador.GetComponent<ISubject>().AddObserver(gameObject.GetComponent<IObserver>());
 
     }
 
@@ -22,7 +22,7 @@ public class Globo : MonoBehaviour
         ComprobarLimite();
     }
 
-    private void InflarGlobo(object sender, int idPersonaje)
+    private void InflarGlobo()
     {
         numVecesInflado ++;
         transform.localScale *= 1.03f;
@@ -34,8 +34,30 @@ public class Globo : MonoBehaviour
         {
             GestorGlobos.instancia.Derrota();
             Destroy(gameObject, 0.1f);
-            ExplotarGlobo?.Invoke(this, 0);
+            NotifyObservers();
         }
     }
 
+    public void UpdateState(int id)
+    {
+        InflarGlobo();
+    }
+
+    public void AddObserver(IObserver o)
+    {
+        observadores.Add(o);
+    }
+
+    public void RemoveObserver(IObserver o)
+    {
+        observadores.Remove(o);
+    }
+
+    public void NotifyObservers()
+    {
+        foreach(IObserver o in observadores)
+        {
+            o.UpdateState(1);
+        }
+    }
 }
