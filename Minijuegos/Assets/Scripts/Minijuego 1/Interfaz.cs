@@ -16,6 +16,11 @@ public class Interfaz : MonoBehaviour, IObserver
 
     private bool juegoFinalizado = false;
 
+    [SerializeField]
+    private AudioSource _reproductor;
+    [SerializeField]
+    private AudioClip _clipAudio;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +45,7 @@ public class Interfaz : MonoBehaviour, IObserver
 
     private void ExplotarGlobo()
     {
+        GestorMúsica.PonerMusica(_clipAudio, _reproductor, false);
         puntuacion.text = "Puntuación: 0";
     }
 

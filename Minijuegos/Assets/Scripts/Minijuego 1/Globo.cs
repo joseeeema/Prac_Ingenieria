@@ -8,6 +8,7 @@ public class Globo : MonoBehaviour, IObserver, ISubject
     public int numVecesInflado = 0;
     private List<IObserver> observadores = new List<IObserver>();
 
+
     private void Start()
     {
         observadores= new List<IObserver>();

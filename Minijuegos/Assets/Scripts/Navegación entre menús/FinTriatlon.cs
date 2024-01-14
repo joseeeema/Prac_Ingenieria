@@ -133,7 +133,7 @@ public class FinTriatlon : MonoBehaviour
             ControladorJuego.instancia.datosGuardado._recordSegundosJ2 = ControladorJuego.instancia.segundosJ2;
         }
         if ((ControladorJuego.instancia.minutosJ3 > ControladorJuego.instancia.datosGuardado._recordMinutosJ3) ||
-                ((ControladorJuego.instancia.minutosJ3 == ControladorJuego.instancia.datosGuardado._recordMinutosJ3) && (ControladorJuego.instancia.segundosJ3 < ControladorJuego.instancia.datosGuardado._recordSegundosJ3)))
+                ((ControladorJuego.instancia.minutosJ3 == ControladorJuego.instancia.datosGuardado._recordMinutosJ3) && (ControladorJuego.instancia.segundosJ3 > ControladorJuego.instancia.datosGuardado._recordSegundosJ3)))
         {
             _record3.SetActive(true);
             ControladorJuego.instancia.datosGuardado._recordMinutosJ3 = ControladorJuego.instancia.minutosJ3;

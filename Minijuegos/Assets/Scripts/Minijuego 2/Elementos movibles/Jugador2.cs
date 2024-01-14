@@ -19,6 +19,7 @@ public class Jugador2 : MonoBehaviour, IMovible
 
     public GameObject[] skins;
 
+
     private void Awake()
     {
         _camara = GameObject.FindWithTag("MainCamera");

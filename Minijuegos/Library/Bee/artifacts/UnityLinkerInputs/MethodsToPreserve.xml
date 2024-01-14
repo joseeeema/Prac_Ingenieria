@@ -1,0 +1,90 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="BotonesInicio">
+			<method name="ComenzarJuego"/>
+			<method name="MostrarCreditos"/>
+			<method name="OcultarCreditos"/>
+			<method name="Salir"/>
+		</type>
+		<type fullname="BotonesJuego1">
+			<method name="Continuar"/>
+			<method name="Continuar"/>
+		</type>
+		<type fullname="BotonesJuego2">
+			<method name="Continuar"/>
+		</type>
+		<type fullname="BotonesJuego3">
+			<method name="Continuar"/>
+		</type>
+		<type fullname="BotonesJuegoLibre">
+			<method name="Minijuego1"/>
+			<method name="Minijuego2"/>
+			<method name="Minijuego3"/>
+			<method name="MostrarControles1"/>
+			<method name="MostrarControles2"/>
+			<method name="MostrarControles3"/>
+			<method name="OcultarControles1"/>
+			<method name="OcultarControles2"/>
+			<method name="OcultarControles3"/>
+			<method name="Volver"/>
+		</type>
+		<type fullname="BotonesPersonajes">
+			<method name="Continuar"/>
+			<method name="SeleccionPersonajeA"/>
+			<method name="SeleccionPersonajeB"/>
+			<method name="SeleccionPersonajeC"/>
+			<method name="SeleccionPersonajeD"/>
+			<method name="Volver"/>
+		</type>
+		<type fullname="BotonesSelección">
+			<method name="InfoJuegoLibre"/>
+			<method name="InfoTriatlon"/>
+			<method name="InicioJuegoLibre"/>
+			<method name="InicioTriatlon"/>
+			<method name="OcultarInfoJuegoLibre"/>
+			<method name="OcultarInfoTriatlon"/>
+			<method name="Volver"/>
+		</type>
+		<type fullname="FinTriatlon">
+			<method name="VolverMenu"/>
+		</type>
+		<type fullname="GestorGlobos">
+			<method name="Continuar"/>
+			<method name="VolverMenu"/>
+		</type>
+		<type fullname="GestorJuguetes">
+			<method name="Continuar"/>
+			<method name="VolverMenu"/>
+		</type>
+		<type fullname="GestorLaberinto">
+			<method name="Continuar"/>
+			<method name="VolverMenu"/>
+		</type>
+		<type fullname="GestorOpciones">
+			<method name="CambiarBrillo"/>
+			<method name="CambiarBrillo"/>
+			<method name="CambiarBrillo"/>
+			<method name="CambiarBrillo"/>
+			<method name="CambiarVolumenMusica"/>
+			<method name="CambiarVolumenMusica"/>
+			<method name="CambiarVolumenMusica"/>
+			<method name="CambiarVolumenMusica"/>
+			<method name="CambiarVolumenSonido"/>
+			<method name="CambiarVolumenSonido"/>
+			<method name="CambiarVolumenSonido"/>
+			<method name="CambiarVolumenSonido"/>
+			<method name="ModificarDirtyFlag"/>
+			<method name="ModificarDirtyFlag"/>
+			<method name="ModificarDirtyFlag"/>
+			<method name="ModificarDirtyFlag"/>
+			<method name="MostrarOpciones"/>
+			<method name="MostrarOpciones"/>
+			<method name="MostrarOpciones"/>
+			<method name="MostrarOpciones"/>
+			<method name="OcultarOpciones"/>
+			<method name="OcultarOpciones"/>
+			<method name="OcultarOpciones"/>
+			<method name="OcultarOpciones"/>
+		</type>
+	</assembly>
+</linker>

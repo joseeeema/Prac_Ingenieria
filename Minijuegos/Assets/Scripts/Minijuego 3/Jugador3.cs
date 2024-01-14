@@ -7,6 +7,10 @@ public class Jugador3 : MonoBehaviour
     private int _numVidas = 3;
     public GameObject[] skins;
     [SerializeField] private GameObject[] _vidas;
+    [SerializeField]
+    private AudioSource _reproductor;
+    [SerializeField]
+    private AudioClip _clipAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +69,8 @@ public class Jugador3 : MonoBehaviour
 
     public void ReducirVidas()
     {
-            _numVidas--;
+        GestorMúsica.PonerMusica(_clipAudio, _reproductor, false);
+        _numVidas--;
             _vidas[_numVidas].SetActive(false);
             if(_numVidas == 0)
             {

@@ -8,7 +8,7 @@ public class OpcionesEscenas : MonoBehaviour
 
     public float _nivelBrillo = 1f;
     public float _volumenMusica = 0.8f;
-    public float _volumenSonido = 0.8f;
+    public float _volumenSonido = -8f;
 
     private void Awake()
     {

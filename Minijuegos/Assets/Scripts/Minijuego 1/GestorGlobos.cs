@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class GestorGlobos : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class GestorGlobos : MonoBehaviour
     private TMP_Text _comentario;
     [SerializeField]
     private GameObject _pantallaDerrota;
+    [SerializeField]
+    private GameObject _panelPausa;
 
     public bool juegoBloqueado = true;
 
@@ -30,7 +34,12 @@ public class GestorGlobos : MonoBehaviour
     [SerializeField]
     private GameObject _objetivo;
 
-
+    [SerializeField]
+    private AudioSource _reproductor;
+    [SerializeField]
+    private AudioClip _clipAudio;
+    [SerializeField]
+    private AudioMixer mezclador;
 
     private void Awake()
     {
@@ -46,8 +55,42 @@ public class GestorGlobos : MonoBehaviour
 
     void Start()
     {
+        mezclador.SetFloat("volumenMusica", OpcionesEscenas.instance._volumenMusica);
+        mezclador.SetFloat("volumenSonido", OpcionesEscenas.instance._volumenSonido);
         GenerarLimite();
         StartCoroutine(CuentaAtras());
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pausar();
+        }
+    }
+
+    public void Pausar()
+    {
+        juegoBloqueado = true;
+        _panelPausa.SetActive(true);
+    }
+
+    public void VolverMenu()
+    {
+        if(ControladorJuego.instancia._triatlon)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
+
+    public void Continuar()
+    {
+        juegoBloqueado = false;
+        _panelPausa.SetActive(false);
     }
 
     private void GenerarLimite()
@@ -100,13 +143,17 @@ public class GestorGlobos : MonoBehaviour
 
     IEnumerator CuentaAtras()
     {
+        GestorMúsica.PonerMusica(_clipAudio, _reproductor, false);
         yield return new WaitForSeconds(1f);
+        GestorMúsica.PonerMusica(_clipAudio, _reproductor, false);
         _tres.SetActive(false);
         _dos.SetActive(true);
         yield return new WaitForSeconds(1f);
+        GestorMúsica.PonerMusica(_clipAudio, _reproductor, false);
         _dos.SetActive(false);
         _uno.SetActive(true);
         yield return new WaitForSeconds(1f);
+        GestorMúsica.PonerMusica(_clipAudio, _reproductor, false);
         _uno.SetActive(false);
         _objetivo.SetActive(true);
         yield return new WaitForSeconds(1f);
